@@ -5,7 +5,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/demo")
+@app.get("/demo/")
 async def read_root():
     return {"Hello": "World"}
 
