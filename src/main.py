@@ -1,6 +1,13 @@
-from typing import Optional
-
 from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import Optional,Union
+
+
+class Item(BaseModel):
+    name: str
+    description: Union[str, None] = None
+    price: float
+    tax: Union[float, None] = None
 
 app = FastAPI()
 
@@ -15,6 +22,6 @@ async def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 
-@app.get("/demo/items/")
-async def read_items(skip: int = 0, limit: int = 10):
-    return {'skip':skip,'limit':limit}
+@app.post("/demo/items/")
+async def create_item(item: Item):
+    return item
