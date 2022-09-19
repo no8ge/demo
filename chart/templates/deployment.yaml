@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: demo
-          image: mx2542/anti-demo:1.0
+          image: mx2542/anti-demo:latest
           command:
             - "uvicorn"
           args:
