@@ -23,7 +23,7 @@ async def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
 
-@app.post("/demo/items/")
+@app.post("/demo/items")
 async def create_item(item: Item):
-    pprint(item.dict())
-    return item
+    pprint(item.events)
+    return item.events
