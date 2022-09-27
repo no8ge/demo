@@ -35,7 +35,8 @@ spec:
     spec:
       containers:
         - name: demo
-          image: mx2542/anti-demo:latest
+          # image: mx2542/anti-demo:latest
+          image: "{{ .Values.image }}"
           command:
             - "uvicorn"
           args:
