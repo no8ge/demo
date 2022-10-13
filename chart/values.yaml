@@ -1,1 +1,2 @@
-image: "mx2542/anti-demo:latest"
+image: "mx2542/demo:latest"
+imagePullPolicy: Always

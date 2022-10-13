@@ -46,4 +46,4 @@ spec:
             - "--port=8002"
           ports:
             - containerPort: 8002
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.imagePullPolicy }}

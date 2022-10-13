@@ -28,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: mx2542/anti-demo:latest
+          tags: mx2542/demo:latest
