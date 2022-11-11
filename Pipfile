@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 fastapi = "==0.78.0"
 uvicorn = {version = "==0.17.6", extras = ["standard"]}
+locust = "*"
 
 [dev-packages]
 
@@ -14,7 +15,6 @@ python_version = "3.9"
 
 [scripts]
 serve = "uvicorn src.main:app --reload --host=127.0.0.1 --port=8002"
-proxy = "kubectl port-forward svc/svc-demo 8002:8002"
-build = "docker buildx build -f Dockerfile --platform linux/amd64 -t mx2542/anti-demo:1.0 . --push"
-deploy = "helm install demo chart"
+build-qt = "docker buildx build -f Dockerfile --platform linux/amd64 -t dockerhub.qingcloud.com/qingtest/demo:1.0 . --push"
+build = "docker buildx build -f Dockerfile --platform linux/amd64 -t mx2542/demo:latest . --push"
 pef = "locust -f src/locustfile.py -u 10 -r 10 --run-time 30s --host http://127.0.0.1:8002 --html=report.html --loglevel=DEBUG --logfile=log.log --autostart  --web-host=0.0.0.0 --web-port=9090 --csv=report"
