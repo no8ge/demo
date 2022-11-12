@@ -1,6 +1,6 @@
 apiVersion: v2
 name: demo
-description: A demo chart for tink
+description: A demo chart for atop
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -23,5 +23,3 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "0.1.0"
 
-# dependencies:
-#   - name: nfs-server-provisioner

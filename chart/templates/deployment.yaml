@@ -10,11 +10,7 @@ spec:
   ports:
     - protocol: TCP
       port: 8002
-      targetPort:
-        8002
-        # nodePort: 30085
-  clusterIP: None
-  # type: NodePort
+      targetPort: 8002
 
 ---
 apiVersion: apps/v1
@@ -37,7 +33,6 @@ spec:
         - name: regcred
       containers:
         - name: demo
-          # image: mx2542/anti-demo:latest
           image: "{{ .Values.image }}"
           command:
             - "uvicorn"
@@ -48,4 +43,4 @@ spec:
             - "--port=8002"
           ports:
             - containerPort: 8002
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          imagePullPolicy: { { .Values.imagePullPolicy } }

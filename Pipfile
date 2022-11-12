@@ -6,7 +6,11 @@ name = "pypi"
 [packages]
 fastapi = "==0.78.0"
 uvicorn = {version = "==0.17.6", extras = ["standard"]}
-locust = "*"
+locust = "==2.12.2"
+minio = "==7.1.11"
+requests-toolbelt = "==0.10.0"
+pytest = "==7.2.0"
+autopep8 = "2.0.0"
 
 [dev-packages]
 
@@ -14,7 +18,5 @@ locust = "*"
 python_version = "3.9"
 
 [scripts]
-serve = "uvicorn src.main:app --reload --host=127.0.0.1 --port=8002"
-build-qt = "docker buildx build -f Dockerfile --platform linux/amd64 -t dockerhub.qingcloud.com/qingtest/demo:1.0 . --push"
-build = "docker buildx build -f Dockerfile --platform linux/amd64 -t mx2542/demo:latest . --push"
-pef = "locust -f src/locustfile.py -u 10 -r 10 --run-time 30s --host http://127.0.0.1:8002 --html=report.html --loglevel=DEBUG --logfile=log.log --autostart  --web-host=0.0.0.0 --web-port=9090 --csv=report"
+build = "docker buildx build -f Dockerfile --platform linux/amd64 -t dockerhub.qingcloud.com/qingtest/demo:1.0 . --push"
+pefer = "locust -f src/locustfile.py -u 10 -r 10 --run-time 30s --host http://127.0.0.1:8002 --html=report.html --loglevel=DEBUG --logfile=log.log --autostart  --web-host=0.0.0.0 --web-port=9090 --csv=report"

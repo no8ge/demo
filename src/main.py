@@ -1,14 +1,7 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Any, Optional,Union
 from pprint import pprint
+from fastapi import FastAPI
+from typing import Optional
 
-
-class Item(BaseModel):
-    events: Union[Any, None] = None
-    name: Union[Any, None] = None
-    description: Union[Any, None] = None
-    tax: Union[Any, None] = None
 
 app = FastAPI()
 
@@ -24,6 +17,6 @@ async def read_item(item_id: int, q: Optional[str] = None):
 
 
 @app.post("/demo/items")
-async def create_item(item: Item):
-    pprint(item.events)
-    return item.events
+async def anythings(item: dict):
+    pprint(item)
+    return item
