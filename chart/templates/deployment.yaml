@@ -33,6 +33,8 @@ spec:
       labels:
         app: demo
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: demo
           # image: mx2542/anti-demo:latest
