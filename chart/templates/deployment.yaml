@@ -33,7 +33,7 @@ spec:
         - name: regcred
       containers:
         - name: demo
-          image: "{{ .Values.image }}"
+          image: {{ .Values.image }}
           command:
             - "uvicorn"
           args:
@@ -43,4 +43,4 @@ spec:
             - "--port=8002"
           ports:
             - containerPort: 8002
-          imagePullPolicy: { { .Values.imagePullPolicy } }
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
