@@ -1,4 +1,6 @@
-FROM python:3.7-slim
+# FROM python:3.7-slim
+FROM rappdw/docker-java-python
+
 
 WORKDIR /demo
 
