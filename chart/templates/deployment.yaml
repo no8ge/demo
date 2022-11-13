@@ -29,8 +29,10 @@ spec:
       labels:
         app: "{{ .Release.Name }}-{{ .Chart.Name }}"
     spec:
+{{- if .Values.private }}
       imagePullSecrets:
         - name: regcred
+{{- end }}
       containers:
         - name: "{{ .Release.Name }}-{{ .Chart.Name }}"
           image: "{{ .Values.registry }}/{{ .Values.repository }}/{{ .Values.image }}"

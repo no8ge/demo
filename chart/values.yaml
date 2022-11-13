@@ -2,3 +2,4 @@ registry: docker.io
 repository: mx2542
 image: "demo:latest"
 imagePullPolicy: Always
+private: false
