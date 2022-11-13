@@ -1,2 +1,4 @@
-image: "mx2542/demo:latest"
+registry: docker.io
+repository: mx2542
+image: "demo:latest"
 imagePullPolicy: Always
