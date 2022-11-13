@@ -20,4 +20,5 @@ python_version = "3.9"
 [scripts]
 build = "docker buildx build -f Dockerfile --platform linux/amd64 -t dockerhub.qingcloud.com/qingtest/demo:1.0 . --push"
 chart = "sh scripts/push-chart.sh"
-pefer = "locust -f src/locustfile.py -u 10 -r 10 --run-time 30s --host http://127.0.0.1:8002 --html=report.html --loglevel=DEBUG --logfile=log.log --autostart  --web-host=0.0.0.0 --web-port=9090 --csv=report"
+locust = "locust -f src/locustfile.py -u 10 -r 10 --run-time 30s --host http://127.0.0.1:8002 --html=report.html --loglevel=DEBUG --logfile=log.log --autostart  --web-host=0.0.0.0 --web-port=9090 --csv=report"
+jmeter = "jmeter -n -t src/demo.jmx -l report/test.jtl -e -o report"
