@@ -29,10 +29,8 @@ spec:
       labels:
         app: "{{ .Release.Name }}-{{ .Chart.Name }}"
     spec:
-{{- if .Values.private }}
       imagePullSecrets:
         - name: regcred
-{{- end }}
       containers:
         - name: "{{ .Release.Name }}-{{ .Chart.Name }}"
           image: "{{ .Values.registry }}/{{ .Values.repository }}/{{ .Values.image }}"
@@ -45,4 +43,4 @@ spec:
             - "--port=8002"
           ports:
             - containerPort: 8002
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          imagePullPolicy: Always
