@@ -1,3 +1,3 @@
-registry: dockerhub.qingcloud.com
-repository: qingtest
-image: "demo:1.0"
+registry: docker.io
+repository: mx2542
+image: demo
