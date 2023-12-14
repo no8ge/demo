@@ -130,5 +130,3 @@ dmypy.json
 report
 .vscode
 .DS_Store
-Pipfile
-Pipfile.lock
